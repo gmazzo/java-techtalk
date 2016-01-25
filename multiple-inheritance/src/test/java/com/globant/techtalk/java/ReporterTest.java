@@ -20,8 +20,8 @@ public class ReporterTest {
 	private static final File TXT_FILE = new File("test-output.txt");
 	private static final File JSON_FILE = new File("test-output.json");
 	private static final File BIN_FILE = new File("test-output.bin");
-	private static final List<Supplier<Reporter>> IMPLS = ImmutableList.of(LogReporter::new, JSONLogReporter::new, //
-		SerializableLogReporter::new, //
+	private static final List<Supplier<Reporter>> IMPLS = ImmutableList.of(StdOutReporter::new, JSONStdOutReporter::new, //
+		SerializableStdOutReporter::new, //
 		() -> new FileReporter(TXT_FILE), //
 		() -> new JSONFileReporter(JSON_FILE), //
 		() -> new SerializableFileReporter(BIN_FILE));
