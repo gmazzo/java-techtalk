@@ -2,16 +2,24 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.globant.techtalk.java</groupId>
+	<parent>
+		<groupId>com.globant.techtalk.java</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
 	<artifactId>multiple-inheritance</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
-	<name>multiple-inheritance</name>
+
+	<dependencies>
 	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.5</version>
+		</dependency>
+		
+	</dependencies>
 
 </project>

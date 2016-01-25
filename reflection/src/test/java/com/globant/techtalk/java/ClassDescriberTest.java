@@ -1,5 +1,6 @@
-package com.globant.techtalk.java.reflection;
+package com.globant.techtalk.java;
 
+import com.globant.techtalk.java.ClassDescriber;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;

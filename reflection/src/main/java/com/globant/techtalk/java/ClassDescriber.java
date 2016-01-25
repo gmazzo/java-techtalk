@@ -1,5 +1,6 @@
-package com.globant.techtalk.java.reflection;
+package com.globant.techtalk.java;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -31,6 +32,9 @@ public class ClassDescriber {
 		}
 	}
 
+	/**
+	 * This is not complete, does not show the {@link Constructor}s for example
+	 */
 	public String describe() {
 		StringBuilder sb = new StringBuilder();
 
