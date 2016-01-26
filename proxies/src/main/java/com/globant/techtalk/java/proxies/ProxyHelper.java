@@ -1,7 +1,6 @@
 package com.globant.techtalk.java.proxies;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import net.sf.cglib.proxy.Enhancer;
 
@@ -24,7 +23,7 @@ public abstract class ProxyHelper {
 
 /**
  * JDK proxies are limited to interfaces only. You cannot create a proxy of a
- * {@link Class}!
+ * class!
  */
 class JDKProxyHelper extends ProxyHelper {
 
@@ -49,14 +48,9 @@ class CGLibProxyHelper extends ProxyHelper {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	<U> U createProxy(Class<U> targetClass, final InvocationHandler handler) {
-		return (U) Enhancer.create(targetClass, new net.sf.cglib.proxy.InvocationHandler() {
-
-			@Override
-			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-				return handler.invoke(proxy, method, args);
-			}
-
+	<U> U createProxy(Class<U> targetClass, InvocationHandler handler) {
+		return (U) Enhancer.create(targetClass, (net.sf.cglib.proxy.InvocationHandler) (proxy, method, args) -> {
+			return handler.invoke(proxy, method, args);
 		});
 	}
 
