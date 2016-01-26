@@ -14,6 +14,7 @@
 	</properties>
 
 	<modules>
+		<module>executors</module>
 		<module>multiple-inheritance</module>
 		<module>reflection</module>
 	</modules>
