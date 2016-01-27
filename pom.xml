@@ -12,6 +12,16 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	
+	<modules>
+		<module>executors</module>
+		<module>concurrency</module>
+		<module>reflection</module>
+		<module>proxies</module>
+		<module>lambdas</module>
+		<module>streams</module>
+		<module>multiple-inheritance</module>
+	</modules>
 
 	<dependencies>
 
