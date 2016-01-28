@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
+import com.globant.techtalk.java.workers.FixedThreadPoolWorker;
+import com.globant.techtalk.java.workers.LinearWorker;
+import com.globant.techtalk.java.workers.UnlimitedThreadPoolWorker;
+import com.globant.techtalk.java.workers.Worker;
+
 public class ExecutorsApp {
 
 	public static void main(String[] args) throws Exception {

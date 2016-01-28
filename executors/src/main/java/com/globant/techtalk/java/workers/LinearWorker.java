@@ -1,4 +1,4 @@
-package com.globant.techtalk.java;
+package com.globant.techtalk.java.workers;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
