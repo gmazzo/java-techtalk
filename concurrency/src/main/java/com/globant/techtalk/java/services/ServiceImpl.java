@@ -1,10 +1,12 @@
-package com.globant.techtalk.java;
+package com.globant.techtalk.java.services;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+
+import com.globant.techtalk.java.TestSupport;
 
 /**
  * This {@link Service}, is not thread-safe
- *
+ * 
  */
 public class ServiceImpl extends AbstractService {
 
@@ -13,7 +15,7 @@ public class ServiceImpl extends AbstractService {
 	}
 
 	public ServiceImpl() {
-		super(new LinkedList<>());
+		super(new ArrayList<>());
 	}
 
 }

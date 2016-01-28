@@ -1,9 +1,11 @@
-package com.globant.techtalk.java;
+package com.globant.techtalk.java.services;
 
 import java.util.List;
 
+import com.globant.techtalk.java.TestSupport;
+
 /**
- * A thread-safe {@link Service}, using <code>syncr</code>
+ * A thread-safe {@link Service}, using <code>synchronized</code>
  *
  */
 public class SyncServiceImpl extends ServiceImpl {
@@ -13,13 +15,8 @@ public class SyncServiceImpl extends ServiceImpl {
 	}
 
 	@Override
-	public synchronized boolean add(String value) {
-		return super.add(value);
-	}
-
-	@Override
-	public synchronized boolean remove(String value) {
-		return super.remove(value);
+	public synchronized boolean report(String value) {
+		return super.report(value);
 	}
 
 	@Override

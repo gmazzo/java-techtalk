@@ -1,6 +1,7 @@
-package com.globant.techtalk.java;
+package com.globant.techtalk.java.services;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -8,20 +9,15 @@ import java.util.List;
  *
  */
 public class AbstractService implements Service {
-	private final List<String> values;
+	private final Collection<String> values;
 
-	public AbstractService(List<String> values) {
+	public AbstractService(Collection<String> values) {
 		this.values = values;
 	}
 
 	@Override
-	public boolean add(String value) {
+	public boolean report(String value) {
 		return values.add(value);
-	}
-
-	@Override
-	public boolean remove(String value) {
-		return values.remove(value);
 	}
 
 	@Override
