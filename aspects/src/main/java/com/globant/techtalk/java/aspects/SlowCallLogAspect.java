@@ -1,14 +1,11 @@
 package com.globant.techtalk.java.aspects;
 
-import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 
 @Aspect
 public class SlowCallLogAspect {
-	private static final Logger LOGGER = Logger
-		.getLogger(SlowCallLog.class.getName());
 
 	/**
 	 * Intercepts any method for a class annotated with {@link SlowCallLog}
@@ -39,8 +36,8 @@ public class SlowCallLogAspect {
 			long took = System.currentTimeMillis() - start; // calculates the time it took
 
 			if (took > slowCallLog.value()) {
-				LOGGER.warning("Call of " + joinPoint.toShortString() + " took "
-					+ took + "ms");
+				System.out.println("WARN: " + joinPoint.toShortString()
+					+ " took " + took + "ms");
 			}
 		}
 	}
