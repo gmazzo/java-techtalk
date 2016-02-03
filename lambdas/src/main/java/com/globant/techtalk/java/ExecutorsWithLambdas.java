@@ -1,13 +1,13 @@
 package com.globant.techtalk.java;
 
+import com.globant.techtalk.java.workers.FixedThreadPoolWorker;
+import com.globant.techtalk.java.workers.LinearWorker;
+import com.globant.techtalk.java.workers.UnlimitedThreadPoolWorker;
+import com.globant.techtalk.java.workers.Worker;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
-
-import com.globant.techtalk.java.workers.FixedThreadPoolWorker;
-import com.globant.techtalk.java.workers.LinearWorker;
-import com.globant.techtalk.java.workers.UnlimitedThreadPoolWorker;
 
 public class ExecutorsWithLambdas extends ExecutorsApp {
 
@@ -26,7 +26,8 @@ public class ExecutorsWithLambdas extends ExecutorsApp {
 		app.process(UnlimitedThreadPoolWorker::new, tasks);
 	}
 
-	private void process(Supplier<Worker> workerSupplier, List<Callable<?>> tasks) throws Exception {
+	private void process(Supplier<Worker> workerSupplier,
+		List<Callable<?>> tasks) throws Exception {
 		process(workerSupplier.get(), tasks);
 	}
 
@@ -34,7 +35,8 @@ public class ExecutorsWithLambdas extends ExecutorsApp {
 	 * This lambda will return an {@link Callable} light implementation (no new
 	 * inner anonymous class will be created by the compiler)
 	 */
-	private static <U> Callable<U> sampleLambdaTask(final U result, final long millis) {
+	private static <U> Callable<U> sampleLambdaTask(final U result,
+		final long millis) {
 		return () -> {
 			Thread.sleep(millis);
 			return result;
