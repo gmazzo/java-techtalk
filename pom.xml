@@ -14,13 +14,14 @@
 	</properties>
 	
 	<modules>
-		<module>executors</module>
+		<module>aspects</module>
 		<module>concurrency</module>
-		<module>reflection</module>
-		<module>proxies</module>
+		<module>executors</module>
 		<module>lambdas</module>
-		<module>streams</module>
 		<module>multiple-inheritance</module>
+		<module>proxies</module>
+		<module>reflection</module>
+		<module>streams</module>
 	</modules>
 
 	<dependencies>
